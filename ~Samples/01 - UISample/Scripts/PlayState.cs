@@ -2,28 +2,36 @@
 
 public class PlayState : MonoBehaviour
 {
-    public TextView view;
+    public StringView view;
+    public FloatView hpView;
 
-    private int health = 0;
+    private int score = 0;
+    private float hp = 100;
 
     // Start is called before the first frame update
     void Start()
     {
-        view.OnTextChange(health.ToString());
+        view.OnSet(score.ToString());
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.DownArrow))
+        if(Input.GetKeyDown(KeyCode.Space))
         {
-            health -= 1;
-            view.OnTextChange(health.ToString());
+            score += 100;
+            view.OnSet(score.ToString("000000"));
         }
-        else if(Input.GetKeyDown(KeyCode.UpArrow))
+
+        if (Input.GetKey(KeyCode.DownArrow))
         {
-            health += 1;
-            view.OnTextChange(health.ToString());
+            hp -= 1;
+            hpView.OnSet(hp);
+        }
+        else if (Input.GetKey(KeyCode.UpArrow))
+        {
+            hp += 1;
+            hpView.OnSet(hp);
         }
 
 
