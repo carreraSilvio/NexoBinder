@@ -1,0 +1,13 @@
+{
+  "name": "com.brightlib.enumcreation",
+  "version": "1.0.0",
+  "displayName": "Enum Creator",
+  "description": "Create an enum based of a ScriptableObject.",
+  "unity": "2018.2",
+  "unityRelease": "15f1",
+  "author": 
+  {
+    "name": "Silvio Carréra",
+    "url": "https://github.com/carreraSilvio/EnumCreator"
+  }
+}
