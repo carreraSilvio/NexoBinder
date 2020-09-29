@@ -1,8 +1,8 @@
 {
-  "name": "com.brightlib.enumcreation",
-  "version": "1.0.0",
-  "displayName": "Enum Creator",
-  "description": "Create an enum based of a ScriptableObject.",
+  "name": "com.brightlib.viewbindsystem",
+  "version": "0.1.0",
+  "displayName": "View Bind System",
+  "description": "Different way to set up your UI",
   "unity": "2018.2",
   "unityRelease": "15f1",
   "author": 
