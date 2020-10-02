@@ -1,13 +1,13 @@
 {
-  "name": "com.brightlib.viewbindsystem",
-  "version": "0.1.0",
-  "displayName": "View Bind System",
-  "description": "Different way to set up your UI",
+  "name": "com.nexobinder",
+  "version": "0.2.0",
+  "displayName": "Nexo Binder",
+  "description": "Binds your components to a view so you can decouple your UI from logic.",
   "unity": "2018.2",
   "unityRelease": "15f1",
   "author": 
   {
     "name": "Silvio Carréra",
-    "url": "https://github.com/carreraSilvio/EnumCreator"
+    "url": "https://github.com/carreraSilvio/NexoBinder"
   }
 }

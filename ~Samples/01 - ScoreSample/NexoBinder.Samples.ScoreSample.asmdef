@@ -1,6 +1,8 @@
 {
-    "name": "ViewBindSystem.Runtime",
-    "references": [],
+    "name": "NexoBinder.Samples.ScoreSample",
+    "references": [
+        "GUID:d408812c60573594894f4ff8b1ac4baa"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
