@@ -4,26 +4,18 @@ using UnityEngine.UI;
 
 namespace NexoBinder.Runtime.Binders
 {
-	/// <summary>
-	/// Binder for Unity's <see cref="Text"/> Component
-	/// </summary>
-	[RequireComponent(typeof(Text))]
-    public class TextBinder : Binder
+    /// <summary>
+    /// Binder for Unity's <see cref="Text"/> Component
+    /// </summary>
+    [AddComponentMenu("Nexo Binder/Text Binder")]
+    [RequireComponent(typeof(Text))]
+    public sealed class TextBinder : FieldBinder
     {
         [SerializeField] private Text _text;
-        public BindableField<int> score = new BindableField<int>();
 
         public void Reset()
         {
             _text = GetComponent<Text>();
-        }
-
-        public void Awake()
-        {
-            PreInitialize();
-            //_view = GetComponentInParent<BindField<string>>();
-
-            //_view.OnValueChange += HandleOnValueChange;
         }
 
         protected override void HandleValueChange(object value)

@@ -476,9 +476,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30522320a2836cd4db77780299a17200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bindMaker:
-    _targetMonoBehaviour: {fileID: 2072613076}
-    _targetFieldName: score
+  _targetMonoBehaviour: {fileID: 2072613076}
+  _targetMemberName: score
   _text: {fileID: 922978582}
 --- !u!114 &922978582
 MonoBehaviour:
