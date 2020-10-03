@@ -8,13 +8,13 @@ namespace NexoBinder.Editor
 {
 	public class BinderDataDrawer<T> : PropertyDrawer where T  : BinderData
 	{
-		public const int BINDING_SETUP_OFFSET = 20;
-		public static readonly Color BIND_NOT_SET_COLOR = new Color(1f, 0.4f, 0.4f);
-		public static BindingFlags FIELD_FLAGS =
-			BindingFlags.Instance |
-			BindingFlags.Default |
-			BindingFlags.Public |
-			BindingFlags.NonPublic |
+		private static readonly int BINDING_SETUP_OFFSET = 20;
+		private static readonly Color BIND_NOT_SET_COLOR = new Color(1f, 0.4f, 0.4f);
+		public static BindingFlags FIELD_FLAGS = 
+			BindingFlags.Instance | 
+			BindingFlags.Default | 
+			BindingFlags.Public | 
+			BindingFlags.NonPublic | 
 			BindingFlags.Static;
 
 		protected MonoBehaviour _currentMonoBehaviour;
@@ -25,7 +25,7 @@ namespace NexoBinder.Editor
 
 		protected virtual string BinderTypeName => "Binder";
 
-		private GUIStyle m_BindStyle;
+		private GUIStyle _bindStyle;
 
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 		{
@@ -33,18 +33,17 @@ namespace NexoBinder.Editor
 
 			_currentBinderData = fieldInfo.GetValue(property.serializedObject.targetObject) as T;
 
-			if (m_BindStyle == null)
+			if (_bindStyle == null)
 			{
-				m_BindStyle = new GUIStyle(GUI.skin.FindStyle("FrameBox"));
+				_bindStyle = new GUIStyle(GUI.skin.FindStyle("FrameBox"));
 			}
 
 			GetOptions(property);
 
-			GUI.Box(position, "", m_BindStyle);
+			GUI.Box(position, "", _bindStyle);
 
-			var currentIndex = GetOptionSetIndex();
-			var newIndex = currentIndex;
-			var selectedOption = _binderList[currentIndex];
+            int currentIndex = GetOptionSetIndex();
+            BinderData selectedOption = _binderList[currentIndex];
 
 			// Property name label
 			var binderLabelRect = position;
@@ -131,8 +130,8 @@ namespace NexoBinder.Editor
 		protected virtual void GetOptions(SerializedProperty property)
 		{
 			_binderList.Clear();
-			//_binderList.Add(new Binder());
-		}
+            _binderList.Add(new BinderData());
+        }
 
 		protected virtual string GetSelectedOptionName(BinderData binder)
 		{

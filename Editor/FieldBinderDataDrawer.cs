@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEditor;
 using System;
 using NexoBinder.Runtime.Core;
+using System.Reflection;
 
 namespace NexoBinder.Editor
 {
@@ -16,34 +17,34 @@ namespace NexoBinder.Editor
             _binderList.Clear();
             _binderList.Add(new BinderData());
 
-            var target = (MonoBehaviour)property.serializedObject.targetObject;
+            MonoBehaviour targetObjectMonoBehaviour = (MonoBehaviour)property.serializedObject.targetObject;
+            Transform targetObjectTransform = targetObjectMonoBehaviour.transform;
 
-            var binderTransform = target.transform;
+            List<MonoBehaviour> propertyFieldOwners = new List<MonoBehaviour>
+            {
+                targetObjectMonoBehaviour
+            };
 
-            List<MonoBehaviour> propertyFieldOwners = new List<MonoBehaviour>();
+            targetObjectTransform.GetComponentsInParent(true, propertyFieldOwners);
 
-            propertyFieldOwners.Add(target);
-
-            binderTransform.GetComponentsInParent(true, propertyFieldOwners);
-
-            var propType = typeof(BindableField);
+            Type propType = typeof(BindableField);
 
             foreach (var obj in propertyFieldOwners)
             {
-                var objType = obj.GetType();
+                Type objType = obj.GetType();
 
                 if (objType.IsDefined(typeof(BindableTargetAttribute), true))
                 {
-                    var fields = objType.GetFields(FIELD_FLAGS);
-                    foreach (var field in fields)
+                    FieldInfo[] fieldInfoArray = objType.GetFields(FIELD_FLAGS);
+                    foreach (FieldInfo fieldInfo in fieldInfoArray)
                     {
-                        if (IsAssignableFromAnyOf(field.FieldType, propType) ||
-                            field.FieldType == propType)
+                        if (IsAssignableFromAnyOf(fieldInfo.FieldType, propType) ||
+                            fieldInfo.FieldType == propType)
                         {
                             _binderList.Add(new BinderData()
                             {
                                 targetMonoBehaviour = obj,
-                                targetMemberName = field.Name
+                                targetMemberName = fieldInfo.Name
                             });
                         }
                     }
