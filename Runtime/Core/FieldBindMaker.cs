@@ -11,7 +11,7 @@ namespace NexoBinder.Runtime.Core
 
 		private BindableField _currentField;
 
-        private static BindingFlags BINDING_FLAGS = BindingFlags.Default | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
+        private static readonly BindingFlags BINDING_FLAGS = BindingFlags.Default | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic;
 
 		public FieldBindMaker() { }
 

@@ -6,7 +6,7 @@ namespace NexoBinder.Runtime.Core
     public abstract class Binder : MonoBehaviour, IHasFieldBind
 		//, IPreInitializable
 	{
-		[SerializeField] protected FieldBindMaker _binder = new FieldBindMaker();
+		[SerializeField] protected FieldBindMaker _bindMaker = new FieldBindMaker();
 
 		public Action<object> onValueChange;
 		protected object _value;
@@ -42,13 +42,13 @@ namespace NexoBinder.Runtime.Core
 		{
 			if (add && !_isBound)
 			{
-				_binder.AddBind(SetValue);
-				SetValue(_binder.Value);
+				_bindMaker.AddBind(SetValue);
+				SetValue(_bindMaker.Value);
 				_isBound = true;
 			}
 			else if (!add && _isBound)
 			{
-				_binder.RemoveBind(SetValue);
+				_bindMaker.RemoveBind(SetValue);
 				HandleRemoveBind();
 				_isBound = false;
 			}
@@ -61,10 +61,8 @@ namespace NexoBinder.Runtime.Core
 
 		public virtual void HandleRemoveBind() { }
 
-		// Override on children
-		public virtual void HandleValueChange(object value)
-		{
-		}
+
+		protected abstract void HandleValueChange(object value);
 	}
 
 	public interface IHasFieldBind

@@ -8,7 +8,7 @@ namespace NexoBinder.Runtime.Binders
 	/// Binder for Unity's <see cref="Text"/> Component
 	/// </summary>
 	[RequireComponent(typeof(Text))]
-    public class TextBinder : MonoBehaviour
+    public class TextBinder : Binder
     {
         [SerializeField] private Text _text;
         public BindableField<int> score = new BindableField<int>();
@@ -20,14 +20,18 @@ namespace NexoBinder.Runtime.Binders
 
         public void Awake()
         {
+            PreInitialize();
             //_view = GetComponentInParent<BindField<string>>();
 
             //_view.OnValueChange += HandleOnValueChange;
         }
 
-        private void HandleOnValueChange(string obj)
+        protected override void HandleValueChange(object value)
         {
-            _text.text = obj;
+            if (value == null) return;
+
+            string textValue = value.ToString();
+            _text.text = textValue;
         }
     }
 }
