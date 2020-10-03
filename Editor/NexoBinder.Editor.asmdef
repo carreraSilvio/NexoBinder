@@ -1,0 +1,17 @@
+{
+    "name": "NexoBinder.Editor",
+    "references": [
+        "GUID:d408812c60573594894f4ff8b1ac4baa"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
