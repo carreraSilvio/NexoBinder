@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace NexoBinder.Runtime.Core
 {
-    [Serializable]
-	public abstract class FieldBinder : Binder<BinderData>
+	[Serializable]
+	public abstract class FieldBinder : Binder<FieldBinderData>
 	{
 		public bool IsBound => _isBound;
 
@@ -33,24 +33,24 @@ namespace NexoBinder.Runtime.Core
 			{
 				return;
 			}
-			if (targetMonoBehaviour == null)
+			if (TargetMonoBehaviour == null)
 			{
 				return;
 			}
-			if (string.IsNullOrEmpty(targetMemberName))
+			if (string.IsNullOrEmpty(TargetMemberName))
 			{
 				return;
 			}
 
-			FieldInfo targetFieldInfo = targetMonoBehaviour.GetType().GetField(targetMemberName, BINDING_FLAGS);
+			FieldInfo targetFieldInfo = TargetMonoBehaviour.GetType().GetField(TargetMemberName, BINDING_FLAGS);
 
 			if (targetFieldInfo == null)
 			{
-				Debug.LogWarning($"Field \"{targetMemberName}\" not found in object of type {targetMonoBehaviour.GetType().Name}.");
+				Debug.LogWarning($"Field \"{TargetMemberName}\" not found in object of type {TargetMonoBehaviour.GetType().Name}.");
 				return;
 			}
 
-            object targetFieldValue = targetFieldInfo.GetValue(targetMonoBehaviour);
+            object targetFieldValue = targetFieldInfo.GetValue(TargetMonoBehaviour);
 
 			if (targetFieldValue is BindableField targetBindableField)
 			{
@@ -59,7 +59,7 @@ namespace NexoBinder.Runtime.Core
 			}
 			else
 			{
-				Debug.LogWarning($"Field with name {targetMemberName} not found in object of type {targetMonoBehaviour.GetType().Name}.");
+				Debug.LogWarning($"Field with name {TargetMemberName} not found in object of type {TargetMonoBehaviour.GetType().Name}.");
 				Debug.LogWarning("Bind not completed");
 			}
 
@@ -81,5 +81,11 @@ namespace NexoBinder.Runtime.Core
 		}
 
         protected abstract void HandleValueChange(object value);
+	}
+
+	[Serializable]
+	public class FieldBinderData : BinderData
+	{
+
 	}
 }

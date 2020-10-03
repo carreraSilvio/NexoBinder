@@ -108,8 +108,8 @@ namespace NexoBinder.Editor
 				objectFieldPos.height = EditorGUIUtility.singleLineHeight;
 				objectFieldPos = EditorGUI.PrefixLabel(objectFieldPos, new GUIContent("Target Object"));
 				EditorGUI.BeginDisabledGroup(true);
-				//EditorGUI.ObjectField(objectFieldPos, _currentBinder.m_TargetObject, typeof(T), true);
-				EditorGUI.EndDisabledGroup();
+                EditorGUI.ObjectField(objectFieldPos, _currentBinderData.targetMonoBehaviour, typeof(T), true);
+                EditorGUI.EndDisabledGroup();
 			}
 		}
 
