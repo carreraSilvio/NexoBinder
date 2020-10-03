@@ -7,15 +7,15 @@ namespace NexoBinder.Samples.ScoreSample
         private const int SCORE_INCREMENT = 10;
         public ScoreView scoreView;
 
-        private int score = 0;
+        private int _score = 0;
 
         // Update is called once per frame
         void Update()
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                score += SCORE_INCREMENT;
-                scoreView.score.Value = score;
+                _score += SCORE_INCREMENT;
+                scoreView.score.Value = _score;
             }
         }
     }
