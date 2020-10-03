@@ -7,9 +7,9 @@ namespace NexoBinder.Runtime.Core
 	{
 		public new T Value
 		{
-			private get
+			get
 			{
-				return (T)default;
+				return _value == null ? (T)default : (T)_value;
 			}
 			set
 			{

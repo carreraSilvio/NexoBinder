@@ -20,7 +20,10 @@ namespace NexoBinder.Runtime.Binders
 
         protected override void HandleValueChange(object value)
         {
-            if (value == null) return;
+            if (value == null)
+            {
+                return;
+            }
 
             string textValue = value.ToString();
             _text.text = textValue;

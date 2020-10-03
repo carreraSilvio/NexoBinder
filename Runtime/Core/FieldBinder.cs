@@ -7,7 +7,9 @@ namespace NexoBinder.Runtime.Core
     [Serializable]
 	public abstract class FieldBinder : Binder
 	{
-		protected bool _isBound;
+		public bool IsBoind => _isBound;
+
+		private bool _isBound;
 
 		private BindableField _currentBindableField;
 
@@ -17,8 +19,7 @@ namespace NexoBinder.Runtime.Core
 
 		private void Awake()
 		{
-			if (_isBound) return;
-			AddBind(HandleValueChange);
+            AddBind(HandleValueChange);
 		}
 
 		private void OnDestroy()
@@ -61,6 +62,8 @@ namespace NexoBinder.Runtime.Core
 				Debug.LogWarning($"Field with name {_targetMemberName} not found in object of type {_targetMonoBehaviour.GetType().Name}.");
 				Debug.LogWarning("Bind not completed");
 			}
+
+			_isBound = true;
 		}
 
 		private void RemoveBind(Action<object> valueChangeHandler)

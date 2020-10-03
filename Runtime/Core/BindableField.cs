@@ -5,16 +5,18 @@ namespace NexoBinder.Runtime.Core
     [Serializable]
     public class BindableField
     {
+        public object _value;
         public Action<object> OnValueChange;
 
         public virtual object Value
         {
-            private get
+            get
             {
-                return default;
+                return _value;
             }
             set
             {
+                _value = Value;
                 OnValueChange?.Invoke(value);
             }
         }
