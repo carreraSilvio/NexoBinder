@@ -1,7 +1,7 @@
 ﻿using NexoBinder.Runtime.Core;
 using UnityEngine;
 
-namespace NexoBinder.Samples
+namespace NexoBinder.Samples.ScoreSample
 {
     [BindableTarget]
     public class ScoreView : MonoBehaviour

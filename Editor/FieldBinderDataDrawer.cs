@@ -29,7 +29,7 @@ namespace NexoBinder.Editor
 
             Type propType = typeof(BindableField);
 
-            foreach (var obj in propertyFieldOwners)
+            foreach (MonoBehaviour obj in propertyFieldOwners)
             {
                 Type objType = obj.GetType();
 
