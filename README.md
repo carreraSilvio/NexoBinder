@@ -49,7 +49,7 @@ Unity 2018.3 and up
 1. Add a binder to your UI component
 2. Chose the field it will be bound to
 
-![Imgur](https://i.imgur.com/8Mx76W5.gif)
+![Imgur](ttps://i.imgur.com/2MnoXkn.gif)
 
 ### Step 3
 1. Update the actual data
@@ -57,3 +57,5 @@ Unity 2018.3 and up
 3. See the result on the UI component
 
 ![Imgur](https://i.imgur.com/OsvETkZ.png)
+
+![Imgur](https://i.imgur.com/4Z0M8Gr.gif)
