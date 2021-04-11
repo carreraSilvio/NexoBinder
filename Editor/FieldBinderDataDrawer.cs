@@ -2,8 +2,8 @@
 using UnityEngine;
 using UnityEditor;
 using System;
-using NexoBinder.Runtime.Core;
 using System.Reflection;
+using NexoBinder.Runtime;
 
 namespace NexoBinder.Editor
 {

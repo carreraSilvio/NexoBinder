@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace NexoBinder.Runtime.Core
+namespace NexoBinder.Runtime
 {
     [Serializable]
     public abstract class Binder<T> : MonoBehaviour where T : BinderData
@@ -17,7 +17,7 @@ namespace NexoBinder.Runtime.Core
                 data.targetMonoBehaviour = value;
             }
         }
-    
+
         public string TargetMemberName
         {
             get

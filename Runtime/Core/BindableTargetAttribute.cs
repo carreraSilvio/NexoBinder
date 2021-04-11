@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace NexoBinder.Runtime.Core
+namespace NexoBinder.Runtime
 {
     [AttributeUsage(AttributeTargets.Class)]
     public class BindableTargetAttribute : Attribute { }

@@ -1,8 +1,7 @@
-﻿using NexoBinder.Runtime.Core;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
-namespace NexoBinder.Runtime.Binders
+namespace NexoBinder.Runtime
 {
     /// <summary>
     /// Binder for Unity's <see cref="Text"/> Component

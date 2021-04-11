@@ -2,11 +2,11 @@
 using UnityEngine;
 using UnityEditor;
 using System.Reflection;
-using NexoBinder.Runtime.Core;
+using NexoBinder.Runtime;
 
 namespace NexoBinder.Editor
 {
-	public class BinderDataDrawer<T> : PropertyDrawer where T  : BinderData
+    public class BinderDataDrawer<T> : PropertyDrawer where T  : BinderData
 	{
 		private static readonly int BINDING_SETUP_OFFSET = 20;
 		private static readonly Color BIND_NOT_SET_COLOR = new Color(1f, 0.4f, 0.4f);
