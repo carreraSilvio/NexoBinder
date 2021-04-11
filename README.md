@@ -38,18 +38,17 @@ Unity 2018.3 and up
 
 ## Usage
 
-### Create Pools
-#### Step 1
+### Step 1
 1. Create a class that will be your View
 2. Add the fields that will be exposed
 
 ![Imgur](https://i.imgur.com/hDQ6MiV.gif)
 
-#### Step 2
+### Step 2
 1. Add a binder to your UI component
 2. Chose the field it will be bound to
 
-![Imgur](ttps://i.imgur.com/2MnoXkn.gif)
+![nexoBinder-004](https://user-images.githubusercontent.com/3154359/114314892-f4743c00-9ad2-11eb-93b8-f9de9fcd525a.gif)
 
 ### Step 3
 1. Update the actual data
