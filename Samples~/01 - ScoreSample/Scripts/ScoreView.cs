@@ -1,4 +1,4 @@
-﻿using NexoBinder.Runtime.Core;
+﻿using NexoBinder.Runtime;
 using UnityEngine;
 
 namespace NexoBinder.Samples.ScoreSample
