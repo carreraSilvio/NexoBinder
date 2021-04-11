@@ -1,8 +1,8 @@
 {
   "name": "com.nexobinder",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "displayName": "Nexo Binder",
-  "description": "Binds your components to a view so you can decouple your UI from logic.",
+  "description": "Bind your components to fields decoupling UI from logic.",
   "unity": "2018.2",
   "unityRelease": "15f1",
   "author": 
@@ -10,4 +10,12 @@
     "name": "Silvio Carréra",
     "url": "https://github.com/carreraSilvio/NexoBinder"
   }
+  "samples": 
+  [
+    {
+        "displayName": "01 - ScoreSample",
+        "description": "A score HUD gets updated everytime we increase the score value.",
+        "path": "Samples~/01 - ScoreSample"
+    }
+  ]
 }
