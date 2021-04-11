@@ -135,18 +135,24 @@ namespace NexoBinder.Editor
 
 		protected virtual string GetSelectedOptionName(BinderData binder)
 		{
-			if (binder.targetMonoBehaviour == null) return "None";
+			if (binder.targetMonoBehaviour == null)
+            {
+                return "None";
+            }
 
-			var genericTypeName = GetBinderFieldGenericTypeName(binder);
+            var genericTypeName = GetBinderFieldGenericTypeName(binder);
 
 			return $"{genericTypeName}{binder.targetMemberName}";
 		}
 
 		protected virtual string GetOptionName(BinderData binder)
 		{
-			if (binder.targetMonoBehaviour == null) return "None";
+			if (binder.targetMonoBehaviour == null)
+            {
+                return "None";
+            }
 
-			var genericTypeName = GetBinderFieldGenericTypeName(binder);
+            var genericTypeName = GetBinderFieldGenericTypeName(binder);
 
 			return $"({binder.targetMonoBehaviour.name}) {binder.targetMonoBehaviour.GetType().Name} / {genericTypeName}{binder.targetMemberName}";
 		}
