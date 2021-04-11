@@ -3,7 +3,7 @@
 # Nexo Binder
 Bind your components to fields decoupling UI from logic.
 
-![Imgur](https://i.imgur.com/XcPNTTL.gif)
+![image](https://user-images.githubusercontent.com/3154359/114314802-96475900-9ad2-11eb-9a39-e6343dee3e1e.png)
 
 ## Features
 * Bind UI components to fields
